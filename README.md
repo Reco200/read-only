@@ -17,6 +17,9 @@ It is a capacitor web-app written in ```HTML, CSS, and Javascript```
 
 ![read-only logo](assets/pdf.png)
 
+## Icon:
+
+![read-only logo](resources/icon.png)
 
 
 
