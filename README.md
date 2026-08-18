@@ -25,4 +25,3 @@ It is a capacitor web-app written in ```HTML, CSS, and Javascript```
 
 
 
-This was created by a 13 year old, so if it lacks quality, try not to judge too hard.
