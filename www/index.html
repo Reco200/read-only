@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>readonly</title>
+
+    <link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Doto:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+
+<body>
+
+    <!-- Library -->
+    <main id="library" class="screen">
+        <header class="topbar">
+            <h1>read-only</h1>
+
+            <button id="importButton" class="primary-button">
+                + Import Book
+            </button>
+
+            <input
+                type="file"
+                id="fileInput"
+                accept=".txt,.md,.pdf"
+                hidden
+            >
+        </header>
+
+        <section class="library">
+            <h2>Your Books</h2>
+
+            <div id="bookList" class="book-list">
+                <!-- Books will be inserted here -->
+                <div class="empty-library">
+                    <p>Your library is empty.</p>
+                    <span>Import a text based file.</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- Reader -->
+    <main id="reader" class="screen hidden">
+
+        <header class="reader-topbar">
+            <button id="backButton" class="back-icon" aria-label="Back">
+                <i data-feather="chevron-left"></i>
+            </button>
+
+            <div class="book-info">
+                <h1 id="bookTitle">Book Title</h1>
+                <span id="bookType">TXT</span>
+            </div>
+        </header>
+
+        <article id="readerContent" class="reader-content">
+            <!-- Book content goes here -->
+        </article>
+
+    </main>
+
+
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,523 @@
+:root {
+    --primary-button-bg: #ffffff;
+    --primary-button-hover-bg: #e7e7e7;
+    --primary-button-text: #111111;
+
+    --icon-button-bg: #2c3b55;
+    --icon-button-hover-bg: #1f2d42;
+    --icon-button-active-bg: #182739;
+
+    --delete-button-hover-bg: #292929;
+    --delete-button-text: #777777;
+    --delete-button-hover-text: #eeeeee;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+button {
+    appearance: none;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+    font: inherit;
+}
+
+html,
+body {
+    margin: 0;
+    min-height: 100%;
+    font-family: "PT Serif", serif;
+    background: #091429;
+    color: #eee;
+}
+
+body {
+    min-height: 100vh;
+    /* Prevent accidental horizontal scrolling that can reveal content under the header */
+    overflow-x: hidden;
+}
+
+
+/* General */
+
+.screen {
+    min-height: 100vh;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* Library */
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 20px 24px;
+
+    border-bottom: 1px solid #292929;
+    background: #040f22;
+}
+
+.topbar h1 {
+    margin: 0;
+    font-size: 24px;
+    font-family: "Doto", sans-serif;
+}
+
+.primary-button {
+    border: none;
+    border-radius: 10px;
+
+    padding: 10px 16px;
+
+    background: var(--primary-button-bg);
+    color: var(--primary-button-text);
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: background-color 0.18s ease, transform 0.12s ease, filter 0.18s ease;
+}
+
+.primary-button:hover {
+    background: var(--primary-button-hover-bg);
+}
+
+.primary-button:active {
+    transform: scale(0.98);
+    filter: brightness(0.96);
+}
+
+.library {
+    max-width: 1000px;
+    margin: auto;
+
+    padding: 30px 24px;
+}
+
+.library h2 {
+    margin-top: 0;
+    font-size: 20px;
+}
+
+
+/* Book list */
+
+.book-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+}
+
+.empty-library {
+    grid-column: 1 / -1;
+
+    padding: 60px 20px;
+
+    text-align: center;
+
+    border: 1px dashed #333;
+    border-radius: 12px;
+
+    color: #888;
+}
+
+.empty-library p {
+    margin: 0 0 8px;
+
+    color: #ddd;
+    font-size: 18px;
+}
+
+.empty-library span {
+    font-size: 14px;
+}
+
+
+/* Book cards */
+
+.book-card {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+
+    padding: 16px;
+
+    border: 1px solid #292929;
+    border-radius: 12px;
+
+    background: #101828;
+    color: #eee;
+
+    text-align: left;
+    transition: background-color 0.18s ease, border-color 0.18s ease;
+}
+
+.book-card:hover {
+    background: #1a2434;
+}
+
+.book-card:active {
+    background: #131d2b;
+}
+
+.book-open {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    flex: 1;
+    min-width: 0;
+
+    padding: 0;
+
+    border: none;
+    border-radius: 10px;
+
+    background: transparent;
+    color: #eee;
+
+    text-align: left;
+
+    cursor: pointer;
+    transition: opacity 0.18s ease, filter 0.18s ease, transform 0.12s ease;
+}
+
+.book-open:hover {
+    background: rgba(255, 255, 255, 0.02);
+    filter: brightness(1.08);
+}
+
+.book-open:active {
+    background: rgba(255, 255, 255, 0.04);
+    transform: scale(0.99);
+    filter: brightness(0.96);
+}
+
+.book-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 48px;
+    height: 60px;
+
+    flex-shrink: 0;
+
+    border-radius: 6px;
+
+    background: #292929;
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.book-card-info {
+    min-width: 0;
+}
+
+.book-card-info h3 {
+    margin: 0 0 4px;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.book-card-info span {
+    color: #777;
+    font-size: 12px;
+}
+
+.delete-button {
+    width: 48px;
+    height: 48px;
+
+    margin-right: 0;
+
+    border: none;
+    border-radius: 8px;
+
+    background: transparent;
+    color: var(--delete-button-text);
+
+    font-size: 28px;
+    line-height: 1;
+
+    cursor: pointer;
+    transition: background-color 0.18s ease, color 0.18s ease, transform 0.12s ease;
+}
+
+.delete-button:hover {
+    background: var(--delete-button-hover-bg);
+    color: var(--delete-button-hover-text);
+}
+
+.delete-button:active {
+    transform: scale(0.96);
+    filter: brightness(1.08);
+}
+
+
+/* Reader */
+
+.reader-topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10000; /* ensure header sits above scaled pages */
+
+    display: flex;
+    align-items: center;
+
+    height: 64px;
+    padding: 16px;
+
+    border-bottom: 1px solid #292929;
+
+    color: #9499a0;
+    background: #040f22;
+
+    transform: none !important; /* ensure header never inherits transforms */
+    /* Prevent horizontal touch panning on the header itself; allow vertical scrolling */
+    touch-action: pan-y;
+}
+
+/* Ensure each pdf page wrapper centers its canvas by default */
+.pdf-page {
+    display: flex;
+    justify-content: center;
+}
+
+/* Make sure the reader content is not hidden under the fixed header */
+.reader-content {
+    padding-top: calc(50px + 64px); /* original 50px + header height */
+}
+
+
+.book-info {
+    flex: 1;
+
+    margin: 0 16px;
+
+    min-width: 0;
+}
+
+.book-info h1 {
+    margin: 0;
+
+    font-size: 17px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.book-info span {
+    font-size: 12px;
+    color: #777;
+}
+
+.icon-button {
+    width: 40px;
+    height: 40px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: var(--icon-button-bg);
+    color: #eee;
+
+    font-size: 20px;
+
+    cursor: pointer;
+    transition: background-color 0.18s ease, transform 0.12s ease, filter 0.18s ease;
+}
+
+.icon-button:hover {
+    background: var(--icon-button-hover-bg);
+}
+
+.icon-button:active {
+    background: var(--icon-button-active-bg);
+    transform: scale(0.97);
+    filter: brightness(1.06);
+}
+
+/* Back button icon that replaces the rounded box — shows only the SVG */
+.back-icon {
+    appearance: none;
+    -webkit-appearance: none;
+    border: none;
+    background: transparent;
+    padding: 6px 8px;
+    margin: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.back-icon svg {
+    width: 26px;
+    height: 26px;
+    color: #eee; /* Feather uses currentColor on SVG stroke/fill */
+    stroke: currentColor;
+    fill: none;
+}
+
+.back-icon:focus {
+    outline: 2px solid rgba(255,255,255,0.12);
+    outline-offset: 2px;
+}
+
+
+
+/* Reading area */
+
+.reader-content {
+    width: min(800px, calc(100% - 40px));
+
+    margin: auto;
+
+    padding: 50px 0 100px;
+
+    font-size: 19px;
+    line-height: 1.8;
+
+    overflow-wrap: break-word;
+}
+
+.pdf-page {
+    margin-bottom: 36px;
+}
+
+/* Ensure the first PDF page sits below the fixed header so it isn't obscured */
+.pdf-page:first-of-type {
+    margin-top: calc(64px + 12px);
+}
+
+.pdf-page canvas {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    border: 1px solid #2a3245;
+    background: #fff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.16);
+}
+
+.pdf-text-layer {
+    display: none !important; /* text layer removed: keep hidden so extracted text is not shown */
+}
+
+
+/* Markdown */
+
+.reader-content h1,
+.reader-content h2,
+.reader-content h3,
+.reader-content h4,
+.reader-content h5,
+.reader-content h6 {
+    line-height: 1.3;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+.reader-content p {
+    margin: 1em 0;
+}
+
+.reader-content ul,
+.reader-content ol {
+    padding-left: 1.5em;
+}
+
+.reader-content blockquote {
+    margin: 1em 0;
+
+    padding-left: 1em;
+
+    border-left: 3px solid #292929;
+
+    color: #aaa;
+}
+
+.reader-content code {
+    padding: 2px 5px;
+
+    border-radius: 4px;
+
+    background: #101828;
+}
+
+.reader-content pre {
+    padding: 16px;
+
+    overflow-x: auto;
+
+    border-radius: 8px;
+
+    background: #101828;
+}
+
+.reader-content pre code {
+    padding: 0;
+
+    background: transparent;
+}
+
+.reader-content img {
+    max-width: 100%;
+    height: auto;
+}
+
+.reader-content a {
+    color: #8ab4f8;
+}
+
+.reader-content hr {
+    border: none;
+    border-top: 1px solid #292929;
+
+    margin: 2em 0;
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .topbar {
+        padding: 16px;
+    }
+
+    .topbar h1 {
+        font-size: 20px;
+    }
+
+    .library {
+        padding: 24px 16px;
+    }
+
+    .reader-content {
+        width: calc(100% - 32px);
+
+        padding-top: 30px;
+
+        font-size: 18px;
+        line-height: 1.7;
+    }
+}

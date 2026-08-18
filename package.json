@@ -1,0 +1,26 @@
+{
+  "name": "readonly",
+  "version": "1.0.0",
+  "description": "Free and Open-Source reading app for android.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "android:add": "npx cap add android",
+    "android:sync": "npx cap sync android",
+    "android:open": "npx cap open android",
+    "android:run": "npx cap run android"
+  },
+  "keywords": [],
+  "author": "RecoMacalis",
+  "license": "GPL-3.0-only",
+  "type": "commonjs",
+  "dependencies": {
+    "@capacitor/android": "^8.5.0",
+    "@capacitor/core": "^8.5.0",
+    "marked": "^18.0.9"
+  },
+  "devDependencies": {
+    "@capacitor/assets": "^3.0.5",
+    "@capacitor/cli": "^8.5.0"
+  }
+}

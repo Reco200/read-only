@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">read-only</string>
+    <string name="title_activity_main">read-only</string>
+    <string name="package_name">read.only.js</string>
+    <string name="custom_url_scheme">read.only.js</string>
+</resources>
