@@ -1,4 +1,6 @@
-# ```read-only```
+<p align="center">
+    <img src="assets/logo.png" width="400">
+</p>
 
 ### The free and open-source reading app for Android that remembers where you left off.
 ```read-only``` is an app that allows people to import text-based files and read them in a clean, minimal UI, designed for Android.
