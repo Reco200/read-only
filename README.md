@@ -21,7 +21,7 @@ read-only is a capacitor web-app written in ```HTML, CSS, and Javascript```
 
 ## Android App Icon:
 
-![read-only logo](resources/icon.png)
+![read-only logo](assets/icon.png)
 
 
 
