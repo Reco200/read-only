@@ -9,7 +9,7 @@ read-only is a capacitor web-app written in ```HTML, CSS, and Javascript```
 # What does it look like?
 ## Home screen: 
 
-![read-only logo](assets/home.png)
+![read-only logo](assets/home2.png)
 
 ## .TXT:
 
@@ -17,11 +17,11 @@ read-only is a capacitor web-app written in ```HTML, CSS, and Javascript```
 
 ## Markdown:
 
-![read-only logo](assets/readme-markdown.png)
+![read-only logo](assets/readme-markdown2.png)
 
 ## PDF:
 
-![read-only logo](assets/pdf.png)
+![read-only logo](assets/pdf2.png)
 
 ## Android App Icon:
 
