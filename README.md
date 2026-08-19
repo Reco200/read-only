@@ -11,6 +11,10 @@ read-only is a capacitor web-app written in ```HTML, CSS, and Javascript```
 
 ![read-only logo](assets/home.png)
 
+## .TXT:
+
+![read-only logo](assets/txt.png)
+
 ## Markdown:
 
 ![read-only logo](assets/readme-markdown.png)
