@@ -11,6 +11,25 @@ const bookTitle = document.getElementById("bookTitle");
 const bookType = document.getElementById("bookType");
 const readerContent = document.getElementById("readerContent");
 
+function resetScrollState() {
+    try {
+        window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    } catch (e) {
+        window.scrollTo(0, 0);
+    }
+
+    try {
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+    } catch (e) {
+        // ignore browser-only scroll reset issues
+    }
+
+    if (readerContent) {
+        readerContent.scrollTop = 0;
+    }
+}
+
 const DB_NAME = "ReadJS";
 const DB_VERSION = 1;
 const STORE_NAME = "books";
@@ -338,6 +357,7 @@ async function openBook(book) {
     // show the reader first so measurements (like clientWidth) are accurate when rendering
     library.classList.add("hidden");
     reader.classList.remove("hidden");
+    resetScrollState();
 
     switch (extension) {
         case "txt":
@@ -896,6 +916,7 @@ readerContent.addEventListener('touchcancel', (e) => { handleTouchEndPinch(e); h
 backButton.addEventListener("click", async () => {
     reader.classList.add("hidden");
     library.classList.remove("hidden");
+    resetScrollState();
 
     // disconnect PDF observer and destroy loaded doc to free memory
     try {
@@ -944,6 +965,7 @@ async function start() {
     try {
         await openDatabase();
         await loadLibrary();
+        resetScrollState();
 
             // replace feather icons (if loaded) so icon markup turns into SVGs
             try {

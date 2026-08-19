@@ -1,15 +1,27 @@
 :root {
-    --primary-button-bg: #ffffff;
-    --primary-button-hover-bg: #e7e7e7;
-    --primary-button-text: #111111;
+    font-family: IBM Plex Mono;
+    color: #e7e9ee;
+    background: #0f1115;
+    font-synthesis: none;
+    --bg: #040f22;
+    --panel: #040f22;
+    --panel-2: #040f22;
+    --border: #214080;
+    --text: #e7e9ee;
+    --muted: #8e96a3;
+    --accent: #081838;
 
-    --icon-button-bg: #2c3b55;
-    --icon-button-hover-bg: #1f2d42;
-    --icon-button-active-bg: #182739;
+    --primary-button-bg: var(--text);
+    --primary-button-hover-bg: #dfe4ee;
+    --primary-button-text: var(--bg);
 
-    --delete-button-hover-bg: #292929;
-    --delete-button-text: #777777;
-    --delete-button-hover-text: #eeeeee;
+    --icon-button-bg: var(--accent);
+    --icon-button-hover-bg: #0d1d3f;
+    --icon-button-active-bg: #12295a;
+
+    --delete-button-hover-bg: rgba(255, 255, 255, 0.06);
+    --delete-button-text: var(--muted);
+    --delete-button-hover-text: var(--text);
 }
 
 * {
@@ -28,8 +40,8 @@ body {
     margin: 0;
     min-height: 100%;
     font-family: "PT Serif", serif;
-    background: #091429;
-    color: #eee;
+    background: var(--bg);
+    color: var(--text);
 }
 
 body {
@@ -59,8 +71,8 @@ body {
 
     padding: 20px 24px;
 
-    border-bottom: 1px solid #292929;
-    background: #040f22;
+    border-bottom: 1px solid var(--border);
+    background: var(--panel);
 }
 
 .topbar h1 {
@@ -122,16 +134,16 @@ body {
 
     text-align: center;
 
-    border: 1px dashed #333;
+    border: 1px dashed var(--border);
     border-radius: 12px;
 
-    color: #888;
+    color: var(--muted);
 }
 
 .empty-library p {
     margin: 0 0 8px;
 
-    color: #ddd;
+    color: var(--text);
     font-size: 18px;
 }
 
@@ -150,22 +162,22 @@ body {
 
     padding: 16px;
 
-    border: 1px solid #292929;
+    border: 1px solid var(--border);
     border-radius: 12px;
 
-    background: #101828;
-    color: #eee;
+    background: var(--panel-2);
+    color: var(--text);
 
     text-align: left;
     transition: background-color 0.18s ease, border-color 0.18s ease;
 }
 
 .book-card:hover {
-    background: #1a2434;
+    background: rgba(33, 64, 128, 0.18);
 }
 
 .book-card:active {
-    background: #131d2b;
+    background: rgba(33, 64, 128, 0.26);
 }
 
 .book-open {
@@ -182,7 +194,7 @@ body {
     border-radius: 10px;
 
     background: transparent;
-    color: #eee;
+    color: var(--text);
 
     text-align: left;
 
@@ -213,7 +225,7 @@ body {
 
     border-radius: 6px;
 
-    background: #292929;
+    background: var(--accent);
 
     font-size: 10px;
     font-weight: 700;
@@ -235,7 +247,7 @@ body {
 }
 
 .book-card-info span {
-    color: #777;
+    color: var(--muted);
     font-size: 12px;
 }
 
@@ -284,10 +296,10 @@ body {
     height: 64px;
     padding: 16px;
 
-    border-bottom: 1px solid #292929;
+    border-bottom: 1px solid var(--border);
 
-    color: #9499a0;
-    background: #040f22;
+    color: var(--muted);
+    background: var(--panel);
 
     transform: none !important; /* ensure header never inherits transforms */
     /* Prevent horizontal touch panning on the header itself; allow vertical scrolling */
@@ -326,7 +338,7 @@ body {
 
 .book-info span {
     font-size: 12px;
-    color: #777;
+    color: var(--muted);
 }
 
 .icon-button {
@@ -337,7 +349,7 @@ body {
     border-radius: 8px;
 
     background: var(--icon-button-bg);
-    color: #eee;
+    color: var(--text);
 
     font-size: 20px;
 
@@ -372,7 +384,7 @@ body {
 .back-icon svg {
     width: 26px;
     height: 26px;
-    color: #eee; /* Feather uses currentColor on SVG stroke/fill */
+    color: var(--text); /* Feather uses currentColor on SVG stroke/fill */
     stroke: currentColor;
     fill: none;
 }
@@ -413,7 +425,7 @@ body {
     max-width: 100%;
     height: auto;
     border-radius: 12px;
-    border: 1px solid #2a3245;
+    border: 1px solid var(--border);
     background: #fff;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.16);
 }
@@ -450,9 +462,9 @@ body {
 
     padding-left: 1em;
 
-    border-left: 3px solid #292929;
+    border-left: 3px solid var(--border);
 
-    color: #aaa;
+    color: var(--muted);
 }
 
 .reader-content code {
@@ -460,7 +472,7 @@ body {
 
     border-radius: 4px;
 
-    background: #101828;
+    background: var(--panel-2);
 }
 
 .reader-content pre {
@@ -470,7 +482,7 @@ body {
 
     border-radius: 8px;
 
-    background: #101828;
+    background: var(--panel-2);
 }
 
 .reader-content pre code {
@@ -490,7 +502,7 @@ body {
 
 .reader-content hr {
     border: none;
-    border-top: 1px solid #292929;
+    border-top: 1px solid var(--border);
 
     margin: 2em 0;
 }
