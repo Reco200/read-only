@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="assets/logo.png" width="400">
+    <img src="assets/ro-logo.png" width="400">
 </p>
 
 ### The free and open-source reading app for Android that remembers where you left off.
@@ -21,7 +21,7 @@ read-only is a capacitor web-app written in ```HTML, CSS, and Javascript```
 
 ## Android App Icon:
 
-![read-only logo](resources/icon.png)
+![read-only logo](assets/icon.png)
 
 
 
