@@ -967,22 +967,13 @@ async function start() {
         await loadLibrary();
         resetScrollState();
 
-            // replace feather icons (if loaded) so icon markup turns into SVGs
-            try {
-                if (window.feather && typeof window.feather.replace === 'function') {
-                    window.feather.replace();
-                }
-            } catch (e) {
-                console.warn('Feather icons replace failed:', e);
-            }
-
-            // Do not auto-open the last book on start — always show the library screen.
-            // This keeps the app predictable and avoids reopening a book when the user
-            // previously closed the app while on the library.
-            // If auto-resume is desired later, add a user preference toggle and re-enable here.
-        } catch (error) {
-            console.error("Failed to start Read.js:", error);
-        }
+        // Do not auto-open the last book on start — always show the library screen.
+        // This keeps the app predictable and avoids reopening a book when the user
+        // previously closed the app while on the library.
+        // If auto-resume is desired later, add a user preference toggle and re-enable here.
+    } catch (error) {
+        console.error("Failed to start Read.js:", error);
+    }
 }
 
 start();

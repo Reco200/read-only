@@ -6,17 +6,6 @@
     <title>readonly</title>
 
     <link rel="stylesheet" href="style.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link
-    href="https://fonts.googleapis.com/css2?family=Doto:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
->
-<link
-    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;600;700&display=swap"
-    rel="stylesheet"
->
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 
@@ -58,7 +47,9 @@
 
         <header class="reader-topbar">
             <button id="backButton" class="back-icon" aria-label="Back">
-                <i data-feather="chevron-left"></i>
+                <svg viewBox="0 0 24 24" aria-hidden="true" width="20" height="20">
+                    <path d="M15 18L9 12L15 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
             </button>
 
             <div class="book-info">
@@ -74,7 +65,6 @@
     </main>
 
 
-    <script src="https://unpkg.com/feather-icons"></script>
     <script src="script.js"></script>
 
 </body>
